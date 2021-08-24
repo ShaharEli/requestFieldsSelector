@@ -9,7 +9,7 @@
     "module": "commonjs", /* Enable incremental compilation */
     "strict": true, /* Enable all strict type-checking options. */
     "esModuleInterop": true, /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
-    "outDir": "./dist",
+    "outDir": "./build",
     "skipLibCheck": true, /* Skip type checking of declaration files. */
     "types": ["jest", "node"],
     "typeRoots" : ["./node_modules/@types", "./src/types"],
@@ -18,7 +18,7 @@
   },
   "exclude": [
     "node_modules",
-    "dist",
+    "build",
     "example",
     "__tests__",
   ],
