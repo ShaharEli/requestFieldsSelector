@@ -1,0 +1,15 @@
+utils:
+  - src/utils/**/*
+types:
+  - src/types/**/*
+events:
+  - src/events/**/*
+commands:
+  - src/commands/**/*
+bot:
+  - src/client.ts
+package:
+  - app/package.json
+workflows:
+  - .github/workflows/**/*
+
