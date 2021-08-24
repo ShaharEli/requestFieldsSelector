@@ -1,5 +1,5 @@
 {
-  "name": "requestfieldsselector",
+  "name": "request-fields-selector",
   "version": "1.0.0",
   "description": "Select the fields you want to get from the api in your client just like graphql with this middleware",
   "main": "build/index.js",
