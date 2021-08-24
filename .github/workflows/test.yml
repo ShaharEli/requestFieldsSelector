@@ -1,8 +1,5 @@
-name: Build and publish
-
-on:
-  push:
-    branches: ["master"]
+name: Test prs
+on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,13 +23,3 @@ jobs:
 
       - name: Test app
         run: npm run test
-
-      - name: Build package
-        run: npm run build
-      - name: "Automated Version Bump"
-        run: npm run release
-
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

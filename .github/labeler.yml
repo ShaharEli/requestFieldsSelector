@@ -2,14 +2,9 @@ utils:
   - src/utils/**/*
 types:
   - src/types/**/*
-events:
-  - src/events/**/*
-commands:
-  - src/commands/**/*
-bot:
-  - src/client.ts
+middleware:
+  - src/index.ts
 package:
   - app/package.json
 workflows:
   - .github/workflows/**/*
-
