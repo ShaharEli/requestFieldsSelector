@@ -1,6 +1,6 @@
 {
   "name": "requestfieldsselector",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Select the fields you want to get from the api in your client just like graphql with this middleware",
   "main": "build/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "dev": "nodemon example/index.ts",
     "build": "tsc",
     "lint": "eslint . --ext .js,.ts --fix",
-    "commit": "npx cz"
+    "commit": "npx cz",
+    "release": "standard-version"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "eslint-plugin-prettier": "^3.4.1",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12",
+    "standard-version": "^9.3.1",
     "supertest": "^6.1.6",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
