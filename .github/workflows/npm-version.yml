@@ -29,6 +29,11 @@ jobs:
 
       - name: Build package
         run: npm run build
+      - name: Identify for release
+        run: |
+          git config --global user.email "shahar.e3@gmail.com"
+          git config --global user.name "Shahar Eliyahu"
+
       - name: "Automated Version Bump"
         run: npm run release
 
