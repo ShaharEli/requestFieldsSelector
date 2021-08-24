@@ -30,20 +30,18 @@ jobs:
       - name: Build package
         run: npm run build
 
+      - name: Identify for release
+        run: |
+          git config --global user.email "shahar.e3@gmail.com"
+          git config --global user.name "Shahar Eliyahu"
+
+      - name: Automated Version Bump
+        run: npm run release
+
+      - name: Publish tags
+        run: git push --follow-tags origin master
+
       - name: Publish to npm
-        run: npx semantic-release
+        run: npm publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # - name: Identify for release
-      #   run: |
-      #     git config --global user.email "shahar.e3@gmail.com"
-      #     git config --global user.name "Shahar Eliyahu"
-
-      # - name: "Automated Version Bump"
-      #   run: npm run release
-
-      # - name: Publish to npm
-      #   run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
