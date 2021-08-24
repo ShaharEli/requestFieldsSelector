@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.2 (2021-08-24)
+
+
+### Bug Fixes
+
+* **node-modules:** fixed build folder ignore path ([44c8afa](https://github.com/ShaharEli/requestFieldsSelector/commit/44c8afac844604c0ad3476ba5386ddee7e678160))
+
 ### 1.0.1 (2021-08-24)
 
 ## [1.0.0](https://github.com/ShaharEli/requestFieldsSelector/compare/v1.1.0...v1.0.0) (2021-08-24)
