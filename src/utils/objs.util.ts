@@ -76,6 +76,7 @@ export const searchFieldsSelectors = (req: Request, fieldSelectorName: string) =
     return fieldKeys.includes(fieldSelectorName)
   })?.[fieldSelectorName]
   if (typeof fieldsSelected !== 'string') return null
+  if (fieldsSelected.length < 2) return null
   return fieldsSelected
 }
 

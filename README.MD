@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ShaharEli/requestFieldsSelector">
-    <img src="https://github.com/ShaharEli/requestFieldsSelector/blob/master/images/logo.png?raw=true" alt="Logo" width="80" height="80">
+    <img src="https://github.com/ShaharEli/requestFieldsSelector/blob/master/assets/logo.png?raw=true" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Request fields selector</h3>
@@ -22,6 +22,9 @@
     ·
     <a href="https://github.com/ShaharEli/requestFieldsSelector/issues">Request Feature</a>
   </p>
+</p>
+<p align="center">
+  <img src="https://github.com/ShaharEli/requestFieldsSelector/blob/master/assets/requestFieldSelectorShowcase.gif" width="600" height="400" />
 </p>
 
 <details open="open">
