@@ -7,13 +7,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/ShaharEli/requestFieldsSelector">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/ShaharEli/requestFieldsSelector/blob/master/images/logo.png?raw=true" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Request fields selector</h3>
 
   <p align="center">
-    Determine the results you get from the server from your client just like GraphQL with easy to plug middleware!
+    Determine the data you want to get from your client just like GraphQL with easy to plug middleware!
     <br />
     <br />
     <a href="https://github.com/ShaharEli/requestFieldsSelector/blob/master/__tests__/middleware.test.ts">View Examples</a>
@@ -45,11 +45,11 @@
 
 ## About The Project
 
-The requestFieldsSelectorMiddleware provide an easy way to pick the fields of the response you send from the api in your client! just like GraphQl and even with the same syntax. The middleware improve your api by reducing over-fetching and less data transportation.
+The requestFieldsSelectorMiddleware provide an easy way to pick the fields of the response you send from the api in your client! just like GraphQl and even with the same syntax. The middleware improve your api by reducing over-fetching and less data transportation. Designed to use in any express api.
 
 ## Motivation
 
-I was getting sick of making many if else statements to reduce the data transportation from my api to my client and GraphQl not always fit in the project type so I wanted to make an easy way to improve all my servers with the advantages of GraphQl.
+I was getting sick of making many if else statements to reduce the data transportation from my api to my client and GraphQl doesn't always fit in the project type so I wanted to make an easy way to improve all my servers with the advantages of GraphQl.
 
 ### Installation
 
@@ -80,7 +80,7 @@ app.use(requestFieldsSelectorMiddleware)
  ))
 ```
 
-- Than in your client:
+- Then in your client:
 
 ```js
 const API_URL = "http://happy";
@@ -109,7 +109,7 @@ const data = await fetch({
 });
 ```
 
-- Than in your api routes:
+- Then in your api routes:
 
 ```js
 app.get("/", (req: Request, res: Response) => {
@@ -138,7 +138,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt) for more information.
 
 <!-- CONTACT -->
 
