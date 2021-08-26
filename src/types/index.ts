@@ -10,7 +10,7 @@ export interface IConfig {
 declare global {
   namespace Express {
     export interface Request {
-      transform?: (arg: any) => any
+      transform?: (arg: Data) => Data
     }
   }
 }

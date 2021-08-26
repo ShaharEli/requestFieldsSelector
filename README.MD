@@ -13,7 +13,7 @@
   <h3 align="center">Request fields selector</h3>
 
   <p align="center">
-    Determine the data you want to get from your client just like GraphQL with easy to plug middleware!
+    Determine the data you want to get from your client just like GraphQL with easy to plug express middleware!
     <br />
     <br />
     <a href="https://github.com/ShaharEli/requestFieldsSelector/blob/master/__tests__/middleware.test.ts">View Examples</a>

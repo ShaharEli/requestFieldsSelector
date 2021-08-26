@@ -12,7 +12,7 @@
     "release": "standard-version"
   },
   "homepage": "https://github.com/ShaharEli/requestFieldsSelector",
-  "author": "",
+  "author": "Shahar Eliyahu",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
@@ -63,7 +63,6 @@
     }
   },
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "files": "build",
