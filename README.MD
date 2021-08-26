@@ -84,7 +84,8 @@ app.use(requestFieldsSelectorMiddleware)
 
 ```js
 const API_URL = "http://happy";
-const data = await fetch(`${API_URL}?fields={
+const data = await fetch(`${API_URL}?fields=
+{
   book {
     author
   }
@@ -94,6 +95,7 @@ const data = await fetch(`${API_URL}?fields={
 const data = await fetch(`${API_URL}?fields={book{author}}`);
 //in the post method:
 const fields = `
+{
  book{
    id
    author{

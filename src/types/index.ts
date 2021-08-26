@@ -6,3 +6,11 @@ export interface IConfig {
   dataNestedField: string // e.g your response look like this {data:"your data",status:"ok",...} the value will be data
   fieldSelectorName: string // e.g your req.query look like this ?customFields="hello" or your req.body includes customFields instead of fields default is fields
 }
+
+declare global {
+  namespace Express {
+    export interface Request {
+      transform?: (arg: any) => any
+    }
+  }
+}

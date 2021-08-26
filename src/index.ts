@@ -8,7 +8,6 @@ const requestFieldsSelectorMiddleware = (
   next: NextFunction,
   config: Partial<IConfig> | IConfig = DEFAULT_CONFIG
 ): RequestHandler<{}, any, any, {}> | Response<any, Record<string, any>> | void => {
-  // @ts-ignore
   req.transform = (d) => d // safer that way
   config = { ...DEFAULT_CONFIG, ...config }
   validateConfig(config)
@@ -22,7 +21,6 @@ const requestFieldsSelectorMiddleware = (
       console.error('fields not valid')
       return next()
     }
-    // @ts-ignore
     req.transform = (data: Data) => transform(data, fields, dataNestedField, isSilent)
     return next()
   } catch {

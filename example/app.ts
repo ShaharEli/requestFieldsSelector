@@ -43,14 +43,11 @@ const data = [
 ]
 
 app.get('/', (req: Request, res: Response) => {
-  // use this to get rid of typescript err:  https://stackoverflow.com/a/44384082
-  // @ts-ignore
-  res.json(req.transform(data))
+  res.json(req.transform!(data))
 })
 
 app.post('/', (req: Request, res: Response) => {
-  // @ts-ignore
-  res.json(req.transform(data))
+  res.json(req.transform!(data))
 })
 
 export default app
