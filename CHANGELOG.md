@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0 (2021-08-24)
+
+
+### Features
+
+* **wf:** final test ([f5684b6](https://github.com/ShaharEli/requestFieldsSelector/commit/f5684b6d0ac94f1dbe2d971c634d0233ca079883))
+
 ### 1.0.3 (2021-08-24)
 
 ### 1.0.2 (2021-08-24)
