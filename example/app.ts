@@ -4,6 +4,7 @@ import requestFieldsSelectorMiddleware from '../src/index'
 const app = express()
 
 app.use(express.json())
+// app.use((...args) => requestFieldsSelectorMiddleware(...args, { silent: true })) // for silent on error
 app.use(requestFieldsSelectorMiddleware)
 const data = [
   {

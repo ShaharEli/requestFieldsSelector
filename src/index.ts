@@ -4,30 +4,30 @@ import { DEFAULT_CONFIG, formatFields, searchFieldsSelectors, transform, validat
 
 const requestFieldsSelectorMiddleware = (
   req: Request,
-  res: Response,
+  _: Response,
   next: NextFunction,
   config: Partial<IConfig> | IConfig = DEFAULT_CONFIG
 ): RequestHandler<{}, any, any, {}> | Response<any, Record<string, any>> | void => {
   // @ts-ignore
   req.transform = (d) => d // safer that way
-  if (!config.fieldSelectorName) {
-    config.fieldSelectorName = DEFAULT_CONFIG.fieldSelectorName
-  }
-  if (!config.dataNestedField) {
-    config.dataNestedField = DEFAULT_CONFIG.dataNestedField
-  }
+  config = { ...DEFAULT_CONFIG, ...config }
   validateConfig(config)
-  const { fieldSelectorName, dataNestedField } = config
-  const fieldsSelector = searchFieldsSelectors(req, fieldSelectorName)
-  if (!fieldsSelector) return next()
-  const fields = formatFields(fieldsSelector)
-  if (!fields) {
-    console.error('fields not valid')
+  try {
+    const { fieldSelectorName, dataNestedField, silent: isSilent } = config as IConfig
+    const fieldsSelector = searchFieldsSelectors(req, fieldSelectorName)
+    if (!fieldsSelector) return next()
+    const fields = formatFields(fieldsSelector)
+    if (!fields) {
+      if (isSilent) return next()
+      console.error('fields not valid')
+      return next()
+    }
+    // @ts-ignore
+    req.transform = (data: Data) => transform(data, fields, dataNestedField, isSilent)
+    return next()
+  } catch {
     return next()
   }
-  // @ts-ignore
-  req.transform = (data: Data) => transform(data, fields, dataNestedField)
-  next()
 }
 
 export default requestFieldsSelectorMiddleware

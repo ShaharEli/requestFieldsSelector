@@ -56,8 +56,15 @@ export const buildObj = (fields: string, obj: BaseData) => {
 
 export const countChars = (s: string, c: string) => s.split('').reduce((acc, curr) => (curr === c ? acc + 1 : acc), 0)
 
+const spaceOutFields = (fields: string) =>
+  fields
+    .split('')
+    .map((char) => (['{', '}'].includes(char) ? ` ${char} ` : char))
+    .join('')
+
 export const formatFields = (fields: string) => {
   if (countChars(fields, '{') !== countChars(fields, '}')) return false
+  fields = spaceOutFields(fields)
   const obj = {}
   buildObj(fields, obj)
   return { ...obj }
@@ -68,13 +75,18 @@ export const searchFieldsSelectors = (req: Request, fieldSelectorName: string) =
     const fieldKeys = Object.keys(f)
     return fieldKeys.includes(fieldSelectorName)
   })?.[fieldSelectorName]
+  if (typeof fieldsSelected !== 'string') return null
   return fieldsSelected
 }
+
 export const matchPattern = (data: BaseData, fields: BaseData, obj?: BaseData) => {
   try {
     const res = obj || {}
     Object.keys(fields).forEach((k) => {
-      if (typeof fields[k] === 'object') {
+      if (!Object.prototype.hasOwnProperty.call(data, k)) {
+        return
+      }
+      if (typeof fields[k] === 'object' && typeof data[k] === 'object') {
         res[k] = {}
         matchPattern(data[k], fields[k], res[k])
       } else {
@@ -83,24 +95,23 @@ export const matchPattern = (data: BaseData, fields: BaseData, obj?: BaseData) =
     })
     return res
   } catch (e) {
-    console.log(e.message)
     throw new Error('type def not valid')
   }
 }
 
-export const transform = (data: Data | Data[], fields: BaseData, dataNestedField: string) => {
+export const transform = (data: Data | Data[], fields: BaseData, dataNestedField: string, isSilent: boolean) => {
   try {
     const extractedData = dataNestedField ? (data as BaseData)[dataNestedField] : data
     if (!extractedData) {
-      console.error(dataNestedField, ' not found on ', data)
       return data
     }
     if (Array.isArray(extractedData)) {
       return extractedData.map((v) => matchPattern(v, fields))
     }
     return matchPattern(extractedData, fields)
-  } catch (e) {
-    console.error(e.message)
+  } catch ({ message }) {
+    if (isSilent) return data
+    console.error(message)
     return data
   }
 }

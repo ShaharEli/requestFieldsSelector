@@ -23,6 +23,28 @@ describe('Request fields selector test', () => {
     expect(result.body).toEqual(data.map(({ page }) => ({ page })))
     expect(result.status).toEqual(200)
   })
+  it('Api should handle non existing fields', async () => {
+    const result = await request(app)
+      .get('/')
+      .query({
+        fields: `
+    { 
+      page { page {hello}  }
+    }
+    `,
+      })
+
+    expect(result.body).toEqual(data.map(({ page }) => ({ page })))
+    expect(result.status).toEqual(200)
+  })
+
+  it('Api should handle non formatted fields', async () => {
+    const result = await request(app).get('/').query({
+      fields: `{page}`,
+    })
+    expect(result.body).toEqual(data.map(({ page }) => ({ page })))
+    expect(result.status).toEqual(200)
+  })
 
   it('Api should send only page field and book-id  if they are the only fields specified', async () => {
     const result = await request(app)
