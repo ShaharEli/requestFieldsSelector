@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.4 (2021-08-26)
+
+
+### Bug Fixes
+
+* **package:** npm ignored files ([349bf24](https://github.com/ShaharEli/requestFieldsSelector/commit/349bf2456d616789dea76dd65ec85a4daaed20c7))
+
 ### 1.2.3 (2021-08-26)
 
 ### 1.2.2 (2021-08-26)
