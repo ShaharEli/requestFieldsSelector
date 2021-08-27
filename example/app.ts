@@ -43,11 +43,11 @@ const data = [
 ]
 
 app.get('/', (req: Request, res: Response) => {
-  res.json(req.transform!(data))
+  res.json(req.transform(data))
 })
 
 app.post('/', (req: Request, res: Response) => {
-  res.json(req.transform!(data))
+  res.json(req.transform(data))
 })
 
 export default app
