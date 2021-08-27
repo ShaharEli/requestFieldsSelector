@@ -21,5 +21,6 @@
     "build",
     "__tests__",
     "assets",
+    "example"
   ],
 }

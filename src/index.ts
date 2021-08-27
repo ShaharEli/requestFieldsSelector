@@ -24,8 +24,6 @@ const requestFieldsSelectorMiddleware = (
     req.transform = (data: Data) => transform(data, fields, dataNestedField, isSilent)
     return next()
   } catch {
-    console.log('111111')
-
     return next()
   }
 }
