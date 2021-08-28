@@ -22,6 +22,7 @@ module.exports = {
     'prefer-template': 2,
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-var-requires': 0,
+    'import/no-extraneous-dependencies': 1,
     'no-useless-return': 0,
     'no-shadow': 0,
     'prettier/prettier': [

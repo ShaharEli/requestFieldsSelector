@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { NextFunction, Response, Request, RequestHandler } from 'express'
 import { Data, IConfig } from './types'
 import { DEFAULT_CONFIG, formatFields, searchFieldsSelectors, transform, validateConfig } from './utils'

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Request } from 'express'
 import { Data, BaseData } from '../types'
 
