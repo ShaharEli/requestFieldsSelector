@@ -1,4 +1,4 @@
-export const data = [
+export const dataMock = [
   {
     book: {
       id: 1,
@@ -33,3 +33,13 @@ export const data = [
     page: 3,
   },
 ]
+
+export const fieldsMock = `
+ {
+   book {
+     author {
+       firstName
+     }
+   }
+ }
+`

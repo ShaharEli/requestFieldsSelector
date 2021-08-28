@@ -1,11 +1,11 @@
 import request from 'supertest'
-import app from '../example/app'
-import { data } from './mocks'
+import app from '../../example/app'
+import { dataMock } from '../mocks'
 
 describe('Request fields selector test', () => {
   it('Api should send the entire data is fields not specified', async () => {
     const result = await request(app).get('/')
-    expect(result.body).toEqual(data)
+    expect(result.body).toEqual(dataMock)
     expect(result.status).toEqual(200)
   })
 
@@ -20,7 +20,7 @@ describe('Request fields selector test', () => {
     `,
       })
 
-    expect(result.body).toEqual(data.map(({ page }) => ({ page })))
+    expect(result.body).toEqual(dataMock.map(({ page }) => ({ page })))
     expect(result.status).toEqual(200)
   })
   it('Api should handle non existing fields', async () => {
@@ -34,7 +34,7 @@ describe('Request fields selector test', () => {
     `,
       })
 
-    expect(result.body).toEqual(data.map(({ page }) => ({ page })))
+    expect(result.body).toEqual(dataMock.map(({ page }) => ({ page })))
     expect(result.status).toEqual(200)
   })
 
@@ -42,7 +42,7 @@ describe('Request fields selector test', () => {
     const result = await request(app).get('/').query({
       fields: `{page}`,
     })
-    expect(result.body).toEqual(data.map(({ page }) => ({ page })))
+    expect(result.body).toEqual(dataMock.map(({ page }) => ({ page })))
     expect(result.status).toEqual(200)
   })
 
@@ -60,7 +60,7 @@ describe('Request fields selector test', () => {
     `,
       })
 
-    expect(result.body).toEqual(data.map(({ page, book }) => ({ page, book: { id: book.id } })))
+    expect(result.body).toEqual(dataMock.map(({ page, book }) => ({ page, book: { id: book.id } })))
     expect(result.status).toEqual(200)
   })
 
@@ -81,7 +81,7 @@ describe('Request fields selector test', () => {
       })
 
     expect(result.body).toEqual(
-      data.map(({ page, book: { author } }) => ({ page, book: { author: { firstName: author.firstName } } }))
+      dataMock.map(({ page, book: { author } }) => ({ page, book: { author: { firstName: author.firstName } } }))
     )
     expect(result.status).toEqual(200)
   })
@@ -103,7 +103,7 @@ describe('Request fields selector test', () => {
       })
 
     expect(result.body).toEqual(
-      data.map(({ page, book: { author } }) => ({ page, book: { author: { firstName: author.firstName } } }))
+      dataMock.map(({ page, book: { author } }) => ({ page, book: { author: { firstName: author.firstName } } }))
     )
     expect(result.status).toEqual(200)
   })

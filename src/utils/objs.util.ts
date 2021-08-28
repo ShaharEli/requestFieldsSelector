@@ -107,7 +107,13 @@ export const transform = (data: Data | Data[], fields: BaseData, dataNestedField
       return data
     }
     if (Array.isArray(extractedData)) {
+      if (dataNestedField) {
+        return { ...data, [dataNestedField]: extractedData.map((v) => matchPattern(v, fields)) }
+      }
       return extractedData.map((v) => matchPattern(v, fields))
+    }
+    if (dataNestedField) {
+      return { ...data, [dataNestedField]: matchPattern(extractedData, fields) }
     }
     return matchPattern(extractedData, fields)
   } catch ({ message }) {
