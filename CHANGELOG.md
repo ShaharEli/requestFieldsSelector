@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.6 (2021-08-27)
+
+
+### Bug Fixes
+
+* **package:** typescript support ([68f4c58](https://github.com/ShaharEli/requestFieldsSelector/commit/68f4c58eb3f6efbc50d1630133cf848cff88275a))
+
 ### 1.2.5 (2021-08-27)
 
 ### 1.2.4 (2021-08-26)
