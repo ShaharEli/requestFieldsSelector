@@ -8,3 +8,5 @@ package:
   - app/package.json
 workflows:
   - .github/workflows/**/*
+tests:
+  - __tests__/**/*
