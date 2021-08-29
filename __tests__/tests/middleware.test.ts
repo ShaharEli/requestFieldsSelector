@@ -107,4 +107,19 @@ describe('Request fields selector test', () => {
     )
     expect(result.status).toEqual(200)
   })
+
+  it('Api should produce console output to inform invalid fields', async () => {
+    const consoleSpy = jest.spyOn(console, 'error')
+
+    await request(app)
+      .post('/')
+      .send({
+        fields: `
+      { 
+         book { 
+      }
+    `,
+      })
+    expect(consoleSpy).toHaveBeenCalledWith('fields not valid')
+  })
 })

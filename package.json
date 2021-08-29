@@ -10,6 +10,7 @@
     "build": "rm -rf ./build && tsc",
     "lint": "eslint . --ext .js,.ts --fix",
     "commit": "npx cz",
+    "test:coverage": "jest --coverage",
     "release": "standard-version"
   },
   "homepage": "https://github.com/ShaharEli/requestFieldsSelector",

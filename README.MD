@@ -77,10 +77,10 @@ app.use(requestFieldsSelectorMiddleware)
 // You can add config object
  app.use((...args) => requestFieldsSelectorMiddleware(...args,
  {
-    silent: true //no error logs
+  silent: true //no error logs
   dataNestedField: "data" // e.g your response look like this {data:"your data",status:"ok",...} the value that will be transformed will be data
   fieldSelectorName: "customFieldsName" // the default fields will be taken from your req.query or req.body and called "fields"
-   }
+ }
  ))
 ```
 
